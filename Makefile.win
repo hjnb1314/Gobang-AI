@@ -1,0 +1,33 @@
+# Project: 项目2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+RES      = 项目2_private.res
+OBJ      = 未命名4.o $(RES)
+LINKOBJ  = 未命名4.o $(RES)
+LIBS     = -L"D:/dev c++/Dev-Cpp/MinGW64/lib" -L"D:/dev c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -leasyx -lgdi32 -lole32  "../../../dev c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib/libwinmm.a" -g3
+INCS     = -I"D:/dev c++/Dev-Cpp/MinGW64/include" -I"D:/dev c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/dev c++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/dev c++/Dev-Cpp/MinGW64/include" -I"D:/dev c++/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/dev c++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/dev c++/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 项目2.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+未命名4.o: 未命名4.cpp
+	$(CPP) -c 未命名4.cpp -o 未命名4.o $(CXXFLAGS)
+
+项目2_private.res: 项目2_private.rc 
+	$(WINDRES) -i 项目2_private.rc --input-format=rc -o 项目2_private.res -O coff 
+
