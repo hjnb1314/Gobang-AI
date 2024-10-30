@@ -1,6 +1,6 @@
 # Gobang-AI
 
-This is a C language program developed for my freshman year final assessment, utilizing the EasyX graphical tool. The program includes the following features:
+运行环境为dev-c++,5.1.1版本，运行后如果报错找不到libwinmm.a文件，请打开项目属性栏，点击参数那添加库或对象，如../../../devcpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib/libwinmm.a
 
 ## Features
 
